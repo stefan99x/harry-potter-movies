@@ -1,0 +1,32 @@
+<div class="table-responsive">
+  <table class="table table-striped">
+    <tr>
+      <th>Box Office</th>
+      <td>{{ movie().box_office }}</td>
+    </tr>
+
+    <tr>
+      <th>Budget</th>
+      <td>{{ movie().budget }}</td>
+    </tr>
+
+    <tr>
+      <th>Duration</th>
+      <td>{{ movie().duration }}</td>
+    </tr>
+
+    <tr>
+      <th>Producers</th>
+      <td>
+        <span *ngFor="let producer of movie().producers">{{ producer }}</span>
+      </td>
+    </tr>
+
+    <tr>
+      <th>Cinematographers</th>
+      <td>
+        <span *ngFor="let cinematographer of movie().cinematographers">{{ cinematographer }}</span>
+      </td>
+    </tr>
+  </table>
+</div>

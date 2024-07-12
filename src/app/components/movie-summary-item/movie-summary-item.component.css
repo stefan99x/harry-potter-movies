@@ -1,0 +1,35 @@
+.movie-summary-item {
+  display: flex;
+  flex-direction: row;
+
+
+  & __content {
+    display: flex;
+    flex-direction: column;
+
+    & __title {
+
+    }
+
+    & __details {
+      display: flex;
+      flex-direction: row;
+
+      & __release-date {
+
+      }
+
+      & __budget {
+
+      }
+
+      & __duration {
+
+      }
+    }
+  }
+
+  & __actions {
+
+  }
+}

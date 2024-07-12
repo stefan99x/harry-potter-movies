@@ -1,0 +1,18 @@
+<div class="wrapper">
+  <div class="filters">
+    <span>Filters</span>
+    <div>
+      <label>Title:</label>
+      <input [(ngModel)]="filterTitle" />
+
+      <label>Release year:</label>
+      <input [(ngModel)]="filterReleaseDate"/>
+    </div>
+  </div>
+  <ul>
+    <li *ngFor="let movie of displayedMovies(); trackBy: identify">
+      <app-movie-summary-item [movieSummary]="movie"/>
+    </li>
+  </ul>
+</div>
+

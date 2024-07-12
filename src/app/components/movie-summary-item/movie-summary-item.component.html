@@ -1,0 +1,13 @@
+<div class="movie-summary-item">
+  <div class="movie-summary-item__content">
+    <h3 class="movie-summary-item__content__title">{{ movieSummary().title }}</h3>
+    <div class="movie-summary-item__content__details">
+      <span class="movie-summary-item__content__details__release-date">Release Date: {{ movieSummary().release_date }} </span>
+      <span class="movie-summary-item__content__details__budget">Budget: ${{ movieSummary().budget }} million </span>
+      <span class="movie-summary-item__content__details__duration">Duration: {{ movieSummary().duration | minutesToHours }}</span>
+    </div>
+  </div>
+  <div class="movie-summary-item__actions">
+    <button [routerLink]="['/movies', movieSummary().id]">Details</button>
+  </div>
+</div>

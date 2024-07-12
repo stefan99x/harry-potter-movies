@@ -1,0 +1,34 @@
+<div class="page">
+
+  <div class="header-actions">
+    <button [routerLink]="['/movies']">Back</button>
+  </div>
+
+  <div>
+    <h2>{{ movieDetail().title }}</h2>
+
+    <div class="row">
+      <div>
+        <img
+          *ngIf="movieDetail().poster !== null"
+          [alt]="movieDetail().title"
+          [ngSrc]="movieDetail().poster!"
+          height="520"
+          width="400"
+        />
+      </div>
+
+      <div>
+        <p>
+          <b>Summary:</b> {{ movieDetail().summary }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <app-movie-details-table [movie]="movieDetail()" />
+  </div>
+</div>
+
+

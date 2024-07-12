@@ -1,0 +1,11 @@
+.row{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.page{
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
