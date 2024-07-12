@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MovieDetailsTableComponent } from './movie-details-table.component';
+import {RouterLink} from "@angular/router";
+import {CurrencyPipe} from "@angular/common";
+import {MinutesToHoursPipe} from "../../Pipes/minutes-to-hours.pipe";
 
 describe('MovieDetailsTableComponent', () => {
   let component: MovieDetailsTableComponent;
@@ -8,10 +11,15 @@ describe('MovieDetailsTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MovieDetailsTableComponent]
+      imports: [
+        MovieDetailsTableComponent,
+        RouterLink,
+        CurrencyPipe,
+        MinutesToHoursPipe
+      ]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(MovieDetailsTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

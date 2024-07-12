@@ -1,6 +1,9 @@
 import {MovieSummaryItemComponent} from './movie-summary-item.component';
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {RouterTestingModule} from '@angular/router/testing';
+import {RouterLink} from "@angular/router";
+import {CurrencyPipe} from "@angular/common";
+import {MinutesToHoursPipe} from "../../Pipes/minutes-to-hours.pipe";
 
 describe('MovieSummaryItemComponent', () => {
   let component: MovieSummaryItemComponent;
@@ -9,8 +12,12 @@ describe('MovieSummaryItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [MovieSummaryItemComponent]
+      imports: [
+        RouterTestingModule,
+        RouterLink,
+        CurrencyPipe,
+        MinutesToHoursPipe
+      ],
     }).compileComponents();
   });
 
@@ -22,5 +29,7 @@ describe('MovieSummaryItemComponent', () => {
     fixture.detectChanges();
   });
 
-
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 });

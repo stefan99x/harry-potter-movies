@@ -16,5 +16,5 @@ import {MinutesToHoursPipe} from "../../Pipes/minutes-to-hours.pipe";
   styleUrl: './movie-summary-item.component.css'
 })
 export class MovieSummaryItemComponent {
-  movieSummary:InputSignal<MovieSummaryModel> = input.required<MovieSummaryModel>()
+  movieSummary:InputSignal<MovieSummaryModel> = input.required<MovieSummaryModel>();
 }
