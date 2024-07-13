@@ -4,11 +4,11 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {RouterLink} from "@angular/router";
 import {CurrencyPipe} from "@angular/common";
 import {MinutesToHoursPipe} from "../../Pipes/minutes-to-hours.pipe";
+import {DEFAULT_MOVIE_SUMMARY} from "../../constants/movie-constants";
 
 describe('MovieSummaryItemComponent', () => {
   let component: MovieSummaryItemComponent;
   let fixture: ComponentFixture<MovieSummaryItemComponent>;
-  let element: HTMLElement;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -24,7 +24,7 @@ describe('MovieSummaryItemComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(MovieSummaryItemComponent);
     component = fixture.componentInstance;
-    element = fixture.nativeElement;
+    fixture.componentRef.setInput('movieSummary', DEFAULT_MOVIE_SUMMARY);
 
     fixture.detectChanges();
   });

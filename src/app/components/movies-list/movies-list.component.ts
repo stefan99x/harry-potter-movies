@@ -18,7 +18,7 @@ import {FormsModule} from "@angular/forms";
   styleUrl: './movies-list.component.css'
 })
 export class MoviesListComponent implements OnInit, OnDestroy {
-  private subscriptions: Subscription[] = [];
+  protected subscriptions: Subscription[] = [];
 
   protected filterTitle: WritableSignal<string> = signal<string>("");
   protected filterReleaseDate: WritableSignal<string> = signal<string>("");
@@ -26,8 +26,6 @@ export class MoviesListComponent implements OnInit, OnDestroy {
   protected movies: WritableSignal<MovieSummaryModel[]> = signal([]);
 
   protected displayedMovies: Signal<MovieSummaryModel[]> = computed(() => {
-    console.log(this.filterTitle())
-    console.log(this.filterReleaseDate())
     return this.movies().filter(movie =>
       movie.title.toLowerCase().includes(this.filterTitle().toLowerCase()) &&
       movie.release_date.includes(this.filterReleaseDate())
@@ -51,7 +49,7 @@ export class MoviesListComponent implements OnInit, OnDestroy {
     this.subscriptions.push(subscription);
   }
 
-  protected identify(index: number, item: MovieSummaryModel): string {
+  protected identify(_: number, item: MovieSummaryModel): string {
     return item.id;
   }
 }

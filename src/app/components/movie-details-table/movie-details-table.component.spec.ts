@@ -1,9 +1,10 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MovieDetailsTableComponent } from './movie-details-table.component';
+import {MovieDetailsTableComponent} from './movie-details-table.component';
 import {RouterLink} from "@angular/router";
 import {CurrencyPipe} from "@angular/common";
 import {MinutesToHoursPipe} from "../../Pipes/minutes-to-hours.pipe";
+import {DEFAULT_MOVIE} from "../../constants/movie-constants";
 
 describe('MovieDetailsTableComponent', () => {
   let component: MovieDetailsTableComponent;
@@ -11,17 +12,16 @@ describe('MovieDetailsTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        MovieDetailsTableComponent,
+      providers: [
         RouterLink,
         CurrencyPipe,
         MinutesToHoursPipe
       ]
-    })
-    .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(MovieDetailsTableComponent);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('movie', DEFAULT_MOVIE);
     fixture.detectChanges();
   });
 
