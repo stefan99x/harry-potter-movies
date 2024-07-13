@@ -1,7 +1,15 @@
 <div class="page">
 
   <div class="header-actions">
-    <button [routerLink]="['/movies']">Back</button>
+    <button [routerLink]="['/movies']" class="go-back-button">
+      <img
+        ngSrc="assets/home.svg"
+        alt="home icon"
+        height="24"
+        width="24"
+      />
+      Back
+    </button>
   </div>
 
   <div>
@@ -26,7 +34,8 @@
     </div>
   </div>
 
-  <div>
+  <div class="details-section">
+    <span><b>DETAILS</b></span>
     <app-movie-details-table [movie]="movieDetail()" />
   </div>
 </div>

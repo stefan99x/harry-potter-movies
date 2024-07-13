@@ -2,30 +2,34 @@
   <table class="table table-striped">
     <tr>
       <th>Box Office</th>
-      <td>{{ movie().box_office }}</td>
+      <td>{{ movie().box_office | currency }} million</td>
     </tr>
 
     <tr>
       <th>Budget</th>
-      <td>{{ movie().budget }}</td>
+      <td>{{ movie().budget  | currency }} million</td>
     </tr>
 
     <tr>
       <th>Duration</th>
-      <td>{{ movie().duration }}</td>
+      <td>{{ movie().duration | minutesToHours }}</td>
     </tr>
 
     <tr>
       <th>Producers</th>
       <td>
-        <span *ngFor="let producer of movie().producers">{{ producer }}</span>
+        <span *ngFor="let producer of movie().producers; let i = index">
+          {{ producer }}{{ i === movie().producers.length - 1 ? '' : ',&nbsp;' }}
+        </span>
       </td>
     </tr>
 
     <tr>
       <th>Cinematographers</th>
       <td>
-        <span *ngFor="let cinematographer of movie().cinematographers">{{ cinematographer }}</span>
+        <span *ngFor="let cinematographer of movie().cinematographers; let i = index">
+          {{ cinematographer }}{{ i === movie().cinematographers.length - 1 ? '' : ',&nbsp;' }}
+        </span>
       </td>
     </tr>
   </table>
